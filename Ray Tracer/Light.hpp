@@ -12,15 +12,29 @@
 #include <stdio.h>
 #include "Color.hpp"
 #include "Vector.hpp"
+#include "Shape.hpp"
+#include "Ray.hpp"
 
 class Light {
 public:
+    Light();
     Light(Vector position, Color ambient, Color diffuse, Color specular);
     
-    Vector Position();
-    Color Ambient();
-    Color Diffuse();
-    Color Specular();
+    Vector Position() const;
+    Color Ambient() const;
+    Color Diffuse() const;
+    Color Specular() const;
+    
+    Color CalculateAmbient(const Material& mat) const;
+    Color CalculateDiffuse(const Material& mat, const Vector& normal, const Vector& toLight) const;
+    Color CalculateSpecular(const Material& mat, const Vector& normal, const Vector& toLight, const Vector& incoming) const;
+    Color Illuminate(const Shape* shape, const Ray& ray, GLfloat rayIntersectionT);
+    
+private:
+    Vector _position;
+    Color _ambient;
+    Color _diffuse;
+    Color _specular;
 };
 
 #endif /* Light_hpp */

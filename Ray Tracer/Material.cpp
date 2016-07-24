@@ -22,15 +22,15 @@ Material::Material(Color ambient, Color diffuse, Color specular, GLfloat shiny) 
     this->shiny = shiny;
 }
 
-Color Material::Ambient() {
+Color Material::Ambient() const {
     return ambient;
 }
-Color Material::Diffuse() {
+Color Material::Diffuse() const {
     return diffuse;
 }
-Color Material::Specular() {
+Color Material::Specular() const {
     return specular;
 }
-GLfloat Material::Shiny() {
+GLfloat Material::Shiny() const {
     return shiny;
 }

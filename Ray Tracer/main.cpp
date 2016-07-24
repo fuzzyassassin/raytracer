@@ -12,6 +12,8 @@
 #include "Renderer.hpp"
 #include "Camera.hpp"
 #include "Scene.hpp"
+#include "Sphere.hpp"
+#include "Vector.hpp"
 #include "InputHandlerWrapper.hpp"
 
 void openGlSetup() {
@@ -23,17 +25,22 @@ void openGlSetup() {
 }
 
 Renderer init(int w, int h) {
-    // initCamera
-    // sets plane distance, camera position, and fov
-    Camera cam;
-    
     // initScene
     // old just creates objects and fills the shapes array
     Scene scene;
     
+    Sphere* circle = new Sphere(Vector(3, 4, -100), 5);
+    
+    scene.AddShape(circle);
+    scene.AddLight(Light());
+    
+    // initCamera
+    // sets plane distance, camera position, and fov
+    Camera cam(scene);
+    
     // initCanvas
     // allocates memory to store pixel data
-    Renderer renderer(w, h, cam, scene);
+    Renderer renderer(w, h, cam);
     renderer.MakeStatic();
     
     return renderer;

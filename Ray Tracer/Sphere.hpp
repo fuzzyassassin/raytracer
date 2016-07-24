@@ -21,13 +21,12 @@ public:
     Sphere(Vector center, GLfloat radius);
     Sphere(Vector center, GLfloat radius, Material mat);
     
-    bool rayIntersection(const Ray& r);
-    Vector findNormalAtPoint(const Vector& v);
+    GLfloat rayIntersection(const Ray& r) const override;
+    Vector findNormalAtPoint(const Vector& v) const override;
     
 private:
     Vector center;
     GLfloat radius;
-    Material material;
 };
 
 #endif /* Sphere_hpp */

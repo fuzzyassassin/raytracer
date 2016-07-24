@@ -7,14 +7,39 @@
 //
 
 #include "Scene.hpp"
+#include "Shape.hpp"
 
-Scene::Scene() {
+Scene::~Scene() {
     
 }
 
-int Scene::AddShape(Shape& shape) {
-    return 0;
+const std::vector<Light> Scene::Lights() const {
+    return lights;
 }
-void Scene::RemoveShape(int id){
+
+void Scene::AddShape(const Shape* shape) {
+    shapes.push_back(shape);
+}
+
+void Scene::AddLight(const Light light) {
+    lights.push_back(light);
+}
+
+const Shape* Scene::IntersectingShape(const Ray& ray) {
+    GLfloat minT = -1;
+    int minShapeIndex = -1;
+    for (int i = 0; i < shapes.size(); i++) {
+        const Shape* shape = shapes[i];
+        GLfloat t = shape->rayIntersection(ray);
+        if (t < 0) {
+            continue;
+        }
+        if (minT == -1 || t < minT) {
+            minT = t;
+            minShapeIndex = i;
+        }
+    }
     
+    const Shape* shape = minShapeIndex != -1 ? shapes[minShapeIndex] : nullptr;
+    return shape;
 }

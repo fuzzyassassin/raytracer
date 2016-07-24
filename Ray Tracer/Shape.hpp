@@ -11,17 +11,27 @@
 
 #include <stdio.h>
 #include "Vector.hpp"
+#include "Ray.hpp"
+#include "Material.hpp"
 
 class Shape {    
 public:
+    virtual ~Shape() {};
+    
     /*
-     * Returns -1.0 if there's no intersection
+     * Returns -1.0 if there's no positive t intersection
      */
-    virtual bool rayIntersection() = 0;
-    virtual Vector findNormalAtPoint(const Vector& v) = 0;
+    virtual GLfloat rayIntersection(const Ray& r) const = 0;
+    
+    virtual Vector findNormalAtPoint(const Vector& v) const = 0;
+    
+    virtual Material Mat() const {
+        return material;
+    }
     
 protected:
     GLfloat epsilon = 0.001f;
+    Material material;
 };
 
 #endif /* Shape_hpp */

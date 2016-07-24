@@ -13,20 +13,23 @@
 #include "Vector.hpp"
 #include "Scene.hpp"
 #include "Common.h"
+#include "Color.hpp"
 
 class Camera {
 public:
-    Camera();
-    Camera(Vector position, Vector direction, GLfloat imagePlaneDist);
+    Camera(Scene scene);
+    Camera(Scene scene, GLfloat imagePlaneDist, GLfloat fov);
+    Camera(const Camera &c);
     
-    void MoveTo(Vector position);
-    void ChangeDirection(Vector position);
-    void RenderScene(Scene scene);
+    Color ShootRay(int x, int y, int width, int height);
+    Color RayTrace(const Ray& ray, int remainingBounces);
     
 private:
     Vector _position;
-    Vector _direction;
     GLfloat _planeDist;
+    GLfloat _fov;
+    GLfloat _imageWidth;
+    Scene _scene;
 };
 
 #endif /* Camera_hpp */

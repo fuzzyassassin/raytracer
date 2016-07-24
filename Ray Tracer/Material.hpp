@@ -18,10 +18,10 @@ public:
     Material();
     Material(Color ambient, Color diffuse, Color specular, GLfloat shiny);
     
-    Color Ambient();
-    Color Diffuse();
-    Color Specular();
-    GLfloat Shiny();
+    Color Ambient() const;
+    Color Diffuse() const;
+    Color Specular() const;
+    GLfloat Shiny() const;
     
 private:
     Color ambient;

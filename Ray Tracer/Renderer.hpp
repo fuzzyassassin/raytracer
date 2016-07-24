@@ -18,16 +18,16 @@ class Renderer {
 public:
     static Renderer* currentInstance;
     
-    Renderer(int w, int h, Camera c, Scene s);
+    Renderer(int w, int h, Camera c);
     ~Renderer();
     void Render();
     void Draw();
     void MakeStatic();
     void UpdateFramebufferSize(int w, int h);
+    void WriteColor(Color& pixel, int x, int y);
     
 private:
     Camera cam;
-    Scene scene;
     GLubyte* canvas;
     int width;
     int height;
