@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9021E5041D4D3EDB0082DB48 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9021E5031D4D3EDB0082DB48 /* main.cpp */; };
+		9021E50F1D4D41940082DB48 /* VectorTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9021E50D1D4D41940082DB48 /* VectorTest.cpp */; };
+		9021E5121D4D457C0082DB48 /* Vector.hpp in Sources */ = {isa = PBXBuildFile; fileRef = 903D2A4D1D1F3D8C00BE4A04 /* Vector.hpp */; };
+		9021E5131D4D458E0082DB48 /* Vector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 903D2A4C1D1F3D8C00BE4A04 /* Vector.cpp */; };
+		9021E5151D4D4AB70082DB48 /* libgtest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9021E5141D4D4AB70082DB48 /* libgtest.a */; };
 		903D2A0C1D1F3D3A00BE4A04 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 903D2A0B1D1F3D3A00BE4A04 /* main.cpp */; };
 		903D2A4E1D1F3D8C00BE4A04 /* Color.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 903D2A371D1F3D8C00BE4A04 /* Color.cpp */; };
 		903D2A4F1D1F3D8C00BE4A04 /* InputHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 903D2A3A1D1F3D8C00BE4A04 /* InputHandler.cpp */; };
@@ -24,6 +29,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		9021E4FF1D4D3EDB0082DB48 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 		903D2A061D1F3D3A00BE4A04 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -36,6 +50,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9021E5011D4D3EDB0082DB48 /* Ray Tracer Test */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Ray Tracer Test"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9021E5031D4D3EDB0082DB48 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		9021E50D1D4D41940082DB48 /* VectorTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = VectorTest.cpp; sourceTree = "<group>"; };
+		9021E5141D4D4AB70082DB48 /* libgtest.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libgtest.a; path = ../../../../usr/local/lib/libgtest.a; sourceTree = "<group>"; };
 		903D2A081D1F3D3A00BE4A04 /* Ray Tracer */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Ray Tracer"; sourceTree = BUILT_PRODUCTS_DIR; };
 		903D2A0B1D1F3D3A00BE4A04 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		903D2A371D1F3D8C00BE4A04 /* Color.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Color.cpp; sourceTree = "<group>"; };
@@ -67,6 +85,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		9021E4FE1D4D3EDB0082DB48 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9021E5151D4D4AB70082DB48 /* libgtest.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		903D2A051D1F3D3A00BE4A04 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -79,12 +105,47 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9021E5021D4D3EDB0082DB48 /* Ray Tracer Test */ = {
+			isa = PBXGroup;
+			children = (
+				9021E50C1D4D416A0082DB48 /* Lighting */,
+				9021E50B1D4D41650082DB48 /* Geometry */,
+				9021E50A1D4D415D0082DB48 /* Rendering */,
+				9021E5031D4D3EDB0082DB48 /* main.cpp */,
+			);
+			path = "Ray Tracer Test";
+			sourceTree = "<group>";
+		};
+		9021E50A1D4D415D0082DB48 /* Rendering */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Rendering;
+			sourceTree = "<group>";
+		};
+		9021E50B1D4D41650082DB48 /* Geometry */ = {
+			isa = PBXGroup;
+			children = (
+				9021E50D1D4D41940082DB48 /* VectorTest.cpp */,
+			);
+			name = Geometry;
+			sourceTree = "<group>";
+		};
+		9021E50C1D4D416A0082DB48 /* Lighting */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Lighting;
+			sourceTree = "<group>";
+		};
 		903D29FF1D1F3D3A00BE4A04 = {
 			isa = PBXGroup;
 			children = (
+				9021E5141D4D4AB70082DB48 /* libgtest.a */,
 				903D2A691D31BC8D00BE4A04 /* libglfw.3.2.dylib */,
 				903D2A5B1D1F3DB000BE4A04 /* OpenGL.framework */,
 				903D2A0A1D1F3D3A00BE4A04 /* Ray Tracer */,
+				9021E5021D4D3EDB0082DB48 /* Ray Tracer Test */,
 				903D2A091D1F3D3A00BE4A04 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -93,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				903D2A081D1F3D3A00BE4A04 /* Ray Tracer */,
+				9021E5011D4D3EDB0082DB48 /* Ray Tracer Test */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -156,6 +218,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		9021E5001D4D3EDB0082DB48 /* Ray Tracer Test */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9021E5051D4D3EDB0082DB48 /* Build configuration list for PBXNativeTarget "Ray Tracer Test" */;
+			buildPhases = (
+				9021E4FD1D4D3EDB0082DB48 /* Sources */,
+				9021E4FE1D4D3EDB0082DB48 /* Frameworks */,
+				9021E4FF1D4D3EDB0082DB48 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Ray Tracer Test";
+			productName = "Ray Tracer Test";
+			productReference = 9021E5011D4D3EDB0082DB48 /* Ray Tracer Test */;
+			productType = "com.apple.product-type.tool";
+		};
 		903D2A071D1F3D3A00BE4A04 /* Ray Tracer */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 903D2A0F1D1F3D3A00BE4A04 /* Build configuration list for PBXNativeTarget "Ray Tracer" */;
@@ -182,6 +261,9 @@
 				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = "Fuzzy Apps";
 				TargetAttributes = {
+					9021E5001D4D3EDB0082DB48 = {
+						CreatedOnToolsVersion = 7.1.1;
+					};
 					903D2A071D1F3D3A00BE4A04 = {
 						CreatedOnToolsVersion = 7.1.1;
 					};
@@ -200,11 +282,23 @@
 			projectRoot = "";
 			targets = (
 				903D2A071D1F3D3A00BE4A04 /* Ray Tracer */,
+				9021E5001D4D3EDB0082DB48 /* Ray Tracer Test */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
+		9021E4FD1D4D3EDB0082DB48 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9021E5131D4D458E0082DB48 /* Vector.cpp in Sources */,
+				9021E5121D4D457C0082DB48 /* Vector.hpp in Sources */,
+				9021E50F1D4D41940082DB48 /* VectorTest.cpp in Sources */,
+				9021E5041D4D3EDB0082DB48 /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		903D2A041D1F3D3A00BE4A04 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -227,6 +321,34 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		9021E5061D4D3EDB0082DB48 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LOCAL_LIBRARY_DIR)/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = /usr/local/include;
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = /usr/local/include;
+			};
+			name = Debug;
+		};
+		9021E5071D4D3EDB0082DB48 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LOCAL_LIBRARY_DIR)/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = /usr/local/include;
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = /usr/local/include;
+			};
+			name = Release;
+		};
 		903D2A0D1D1F3D3A00BE4A04 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -329,6 +451,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		9021E5051D4D3EDB0082DB48 /* Build configuration list for PBXNativeTarget "Ray Tracer Test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9021E5061D4D3EDB0082DB48 /* Debug */,
+				9021E5071D4D3EDB0082DB48 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		903D2A031D1F3D3A00BE4A04 /* Build configuration list for PBXProject "Ray Tracer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -345,6 +475,7 @@
 				903D2A111D1F3D3A00BE4A04 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
