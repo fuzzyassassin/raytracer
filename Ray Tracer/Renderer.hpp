@@ -27,10 +27,10 @@ public:
     void WriteColor(Color& pixel, int x, int y);
     
 private:
-    Camera cam;
-    GLubyte* canvas;
-    int width;
-    int height;
+    Camera _cam;
+    GLubyte* _canvas;
+    int _width;
+    int _height;
     
     void InitializeCanvas(int w, int h);
 };

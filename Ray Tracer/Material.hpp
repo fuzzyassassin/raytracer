@@ -24,10 +24,10 @@ public:
     GLdouble Shiny() const;
     
 private:
-    Color ambient;
-    Color diffuse;
-    Color specular;
-    GLdouble shiny;
+    Color _ambient;
+    Color _diffuse;
+    Color _specular;
+    GLdouble _shiny;
 };
 
 #endif /* Material_hpp */

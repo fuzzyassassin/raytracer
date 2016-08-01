@@ -21,8 +21,8 @@ public:
     Vector Direction() const;
     
 private:
-    Vector position;
-    Vector direction;
+    Vector _position;
+    Vector _direction;
 };
 
 #endif /* Ray_hpp */

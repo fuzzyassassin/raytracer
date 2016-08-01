@@ -26,11 +26,11 @@ public:
     const Shape* IntersectingShape(const Ray& ray);
     
 private:
-    std::vector<Light> lights;
+    std::vector<Light> _lights;
     
     // Replace this with custom data structure
     // Should be more time efficient
-    std::vector<const Shape*> shapes;
+    std::vector<const Shape*> _shapes;
 };
 
 #endif /* Scene_hpp */

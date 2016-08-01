@@ -14,6 +14,7 @@
 #include "Scene.hpp"
 #include "Sphere.hpp"
 #include "Vector.hpp"
+#include "Plane.hpp"
 #include "InputHandlerWrapper.hpp"
 
 void openGlSetup() {
@@ -32,9 +33,11 @@ Renderer init(int w, int h) {
     Material sphereMat = Material(Color(50, 192, 128, 255), Color(50, 192, 128, 255), Color(50, 192, 128, 255), 2.0f);
     Sphere* circle = new Sphere(Vector(0, 0, -75), 5, sphereMat);
     Sphere* second = new Sphere(Vector(15, 10, -60), 6);
+    Plane* plane = new Plane(Vector(0, -5, 0), Vector(0, 1, 0));
     
     scene.AddShape(circle);
     scene.AddShape(second);
+    scene.AddShape(plane);
     scene.AddLight(Light(Vector(-10000, 3000, 1000), Color(255,0,0,1), Color(0,255,0,1), Color(0,0,255,1)));
     
     // initCamera

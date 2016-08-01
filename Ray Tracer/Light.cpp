@@ -48,19 +48,19 @@ Color Light::CalculateAmbient(const Material& mat) const {
 }
 
 Color Light::CalculateDiffuse(const Material& mat, const Vector& normal, const Vector& toLight) const {
-    Vector normalNormd = normal.normalizedVector();
-    Vector toLightNormd = -toLight.normalizedVector();
+    Vector normalNormd = normal.NormalizedVector();
+    Vector toLightNormd = -toLight.NormalizedVector();
     
-    Color diffuse = _diffuse * mat.Diffuse() *  normalNormd.dot(toLightNormd);
+    Color diffuse = _diffuse * mat.Diffuse() *  normalNormd.Dot(toLightNormd);
     
 //    return Color(0, 0, 0, 1);
     return diffuse;
 }
 
 Color Light::CalculateSpecular(const Material& mat, const Vector& normal, const Vector& toLight, const Vector& toViewer) const {
-    Vector halfway = -(toLight + toViewer).normalizedVector();
+    Vector halfway = -(toLight + toViewer).NormalizedVector();
     
-    Color specular = _specular * mat.Specular() * pow(normal.normalizedVector().dot(halfway), 3.0f);
+    Color specular = _specular * mat.Specular() * pow(normal.NormalizedVector().Dot(halfway), 3.0f);
     
 //    return Color(0, 0, 0, 1);
     return specular;
@@ -68,9 +68,9 @@ Color Light::CalculateSpecular(const Material& mat, const Vector& normal, const 
 
 Color Light::Illuminate(const Shape* shape, const Vector& toViewer, const Vector& intersection) const {
     Vector toLightDistance = _position - intersection;
-    Vector toLight = toLightDistance.normalizedVector();
+    Vector toLight = toLightDistance.NormalizedVector();
     
-    Vector normal = shape->findNormalAtPoint(intersection);
+    Vector normal = shape->FindNormalAtPoint(intersection);
 
     Color color = CalculateDiffuse(shape->Mat(), normal, toLight) +
                   CalculateSpecular(shape->Mat(), normal, toLight, toViewer);

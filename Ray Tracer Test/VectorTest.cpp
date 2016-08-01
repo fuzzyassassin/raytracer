@@ -20,35 +20,35 @@ TEST(EqualityOperator, Different) {
     Vector v = Vector();
     Vector w = Vector();
     EXPECT_EQ(v, w);
-    v.setX(1.0);
+    v.SetX(1.0);
     EXPECT_NE(v, w);
 }
 
 TEST(DefaultConstructor, Default) {
     Vector v = Vector();
-    EXPECT_EQ(v.x(), 0);
-    EXPECT_EQ(v.y(), 0);
-    EXPECT_EQ(v.z(), 0);
-    EXPECT_EQ(v.length(), 0);
+    EXPECT_EQ(v.X(), 0);
+    EXPECT_EQ(v.Y(), 0);
+    EXPECT_EQ(v.Z(), 0);
+    EXPECT_EQ(v.Length(), 0);
 }
 
 TEST(Constructor, Zeroes) {
     Vector v = Vector(0, 0, 0);
     Vector w = Vector();
-    EXPECT_EQ(v.length(), 0);
+    EXPECT_EQ(v.Length(), 0);
     EXPECT_EQ(v, w);
 }
 
 TEST(Constructor, Arbitrary) {
     Vector v = Vector(0, 0, 1);
-    EXPECT_EQ(v.length(), 1);
+    EXPECT_EQ(v.Length(), 1);
 }
 
 TEST(Constructor, Ones) {
     Vector v = Vector(1, 1, 1);
-    EXPECT_EQ(v.x(), 1);
-    EXPECT_EQ(v.y(), 1);
-    EXPECT_EQ(v.z(), 1);
+    EXPECT_EQ(v.X(), 1);
+    EXPECT_EQ(v.Y(), 1);
+    EXPECT_EQ(v.Z(), 1);
 }
 
 TEST(Constructor, Copy) {
@@ -59,26 +59,26 @@ TEST(Constructor, Copy) {
 
 TEST(SetComponents, X) {
     Vector v = Vector(0, 0, 0);
-    EXPECT_EQ(v.length(), 0);
-    v.setX(3);
-    EXPECT_EQ(v.x(), 3);
-    EXPECT_EQ(v.length(), 3);
+    EXPECT_EQ(v.Length(), 0);
+    v.SetX(3);
+    EXPECT_EQ(v.X(), 3);
+    EXPECT_EQ(v.Length(), 3);
 }
 
 TEST(SetComponents, Y) {
     Vector v = Vector(0, 0, 0);
-    EXPECT_EQ(v.length(), 0);
-    v.setY(3);
-    EXPECT_EQ(v.y(), 3);
-    EXPECT_EQ(v.length(), 3);
+    EXPECT_EQ(v.Length(), 0);
+    v.SetY(3);
+    EXPECT_EQ(v.Y(), 3);
+    EXPECT_EQ(v.Length(), 3);
 }
 
 TEST(SetComponents, Z) {
     Vector v = Vector(0, 0, 0);
-    EXPECT_EQ(v.length(), 0);
-    v.setZ(3);
-    EXPECT_EQ(v.z(), 3);
-    EXPECT_EQ(v.length(), 3);
+    EXPECT_EQ(v.Length(), 0);
+    v.SetZ(3);
+    EXPECT_EQ(v.Z(), 3);
+    EXPECT_EQ(v.Length(), 3);
 }
 
 TEST(Operators, Negative) {
@@ -155,66 +155,66 @@ TEST(Operators, DivideEquals) {
 TEST(VectorFunctions, Length) {
     Vector v = Vector(1, 2, 3);
     GLdouble l = sqrtf(14);
-    EXPECT_FLOAT_EQ(v.length(), l);
+    EXPECT_FLOAT_EQ(v.Length(), l);
 }
 
 TEST(VectorFunctions, LengthWithZero) {
     Vector v = Vector(3, 4, 0);
     GLdouble l = 5.0f;
-    EXPECT_FLOAT_EQ(v.length(), l);
+    EXPECT_FLOAT_EQ(v.Length(), l);
 }
 
 TEST(VectorFunctions, LengthZero) {
     Vector v = Vector(0, 0, 0);
     GLdouble l = 0.0f;
-    EXPECT_FLOAT_EQ(v.length(), l);
+    EXPECT_FLOAT_EQ(v.Length(), l);
 }
 
 TEST(VectorFunctions, NormalizedVector) {
     Vector v = Vector(1, 2, 3);
-    Vector vn = v.normalizedVector();
-    GLdouble length = v.length();
-    EXPECT_EQ(vn.x(), v.x()/length);
-    EXPECT_EQ(vn.y(), v.y()/length);
-    EXPECT_EQ(vn.z(), v.z()/length);
-    EXPECT_FLOAT_EQ(vn.length(), 1.0f);
+    Vector vn = v.NormalizedVector();
+    GLdouble length = v.Length();
+    EXPECT_EQ(vn.X(), v.X()/length);
+    EXPECT_EQ(vn.Y(), v.Y()/length);
+    EXPECT_EQ(vn.Z(), v.Z()/length);
+    EXPECT_FLOAT_EQ(vn.Length(), 1.0f);
 }
 
 TEST(VectorFunctions, NormalizedVectorZero) {
     Vector v = Vector(0, 0, 0);
-    Vector vn = v.normalizedVector();
-    EXPECT_EQ(vn.x(), NAN);
-    EXPECT_EQ(vn.y(), NAN);
-    EXPECT_EQ(vn.z(), NAN);
-    EXPECT_FLOAT_EQ(vn.length(), NAN);
+    Vector vn = v.NormalizedVector();
+    EXPECT_EQ(vn.X(), NAN);
+    EXPECT_EQ(vn.Y(), NAN);
+    EXPECT_EQ(vn.Z(), NAN);
+    EXPECT_FLOAT_EQ(vn.Length(), NAN);
 }
 
 TEST(VectorFunctions, Normalization) {
     Vector v = Vector(1, 2, 3);
     Vector w = Vector(v);
-    GLdouble length = w.length();
-    v.normalize();
-    EXPECT_EQ(v.x(), w.x()/length);
-    EXPECT_EQ(v.y(), w.y()/length);
-    EXPECT_EQ(v.z(), w.z()/length);
-    EXPECT_FLOAT_EQ(v.length(), 1.0f);
+    GLdouble length = w.Length();
+    v.Normalize();
+    EXPECT_EQ(v.X(), w.X()/length);
+    EXPECT_EQ(v.Y(), w.Y()/length);
+    EXPECT_EQ(v.Z(), w.Z()/length);
+    EXPECT_FLOAT_EQ(v.Length(), 1.0f);
 }
 
 TEST(VectorFunctions, NormalizationZero) {
     Vector v = Vector(0, 0, 0);
     Vector w = Vector(v);
-    GLdouble length = w.length();
-    v.normalize();
-    EXPECT_EQ(v.x(), w.x()/length);
-    EXPECT_EQ(v.y(), w.y()/length);
-    EXPECT_EQ(v.z(), w.z()/length);
-    EXPECT_FLOAT_EQ(v.length(), 1.0f);
+    GLdouble length = w.Length();
+    v.Normalize();
+    EXPECT_EQ(v.X(), w.X()/length);
+    EXPECT_EQ(v.Y(), w.Y()/length);
+    EXPECT_EQ(v.Z(), w.Z()/length);
+    EXPECT_FLOAT_EQ(v.Length(), 1.0f);
 }
 
 TEST(VectorFunctions, Projection) {
     Vector v = Vector(1, 2, 3);
     Vector w = Vector(.5, .5, .5);
-    Vector vPw = v.projectionOnto(w);
+    Vector vPw = v.ProjectionOnto(w);
     Vector expected = Vector(2.0, 2.0, 2.0);
     EXPECT_EQ(vPw, expected);
 }
@@ -222,33 +222,33 @@ TEST(VectorFunctions, Projection) {
 TEST(VectorFunctions, DotProductZero) {
     Vector v = Vector(1, 0, 1);
     Vector w = Vector(0, 1, 0);
-    EXPECT_FLOAT_EQ(v.dot(w), 0);
+    EXPECT_FLOAT_EQ(v.Dot(w), 0);
 }
 
 TEST(VectorFunctions, DotProduct) {
     Vector v = Vector(1, 0, 1);
     Vector w = Vector(10, 2, -3);
     GLdouble expected = 7;
-    EXPECT_FLOAT_EQ(v.dot(w), expected);
+    EXPECT_FLOAT_EQ(v.Dot(w), expected);
 }
 
 TEST(VectorFunctions, DotProductSelf) {
     Vector v = Vector(2, 3, 4);
     GLdouble expected = 29;
-    EXPECT_FLOAT_EQ(v.dot(v), expected);
+    EXPECT_FLOAT_EQ(v.Dot(v), expected);
 }
 
 TEST(VectorFunctions, Cross) {
     Vector v = Vector(1, 2, 3);
     Vector w = Vector(5, 7, 1);
     Vector expected = Vector(-19, 14, -3);
-    EXPECT_EQ(v.cross(w), expected);
+    EXPECT_EQ(v.Cross(w), expected);
 }
 
 TEST(VectorFunctions, CrossOpposite) {
     Vector v = Vector(2, 3, 4);
     Vector expected = Vector();
-    EXPECT_EQ(v.cross(-v), expected);
+    EXPECT_EQ(v.Cross(-v), expected);
 }
 
 TEST(VectorFunctions, ReflectedAcrossX) {

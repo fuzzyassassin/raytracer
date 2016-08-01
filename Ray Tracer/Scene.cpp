@@ -14,23 +14,23 @@ Scene::~Scene() {
 }
 
 const std::vector<Light> Scene::Lights() const {
-    return lights;
+    return _lights;
 }
 
 void Scene::AddShape(const Shape* shape) {
-    shapes.push_back(shape);
+    _shapes.push_back(shape);
 }
 
 void Scene::AddLight(const Light light) {
-    lights.push_back(light);
+    _lights.push_back(light);
 }
 
 const Shape* Scene::IntersectingShape(const Ray& ray) {
     GLdouble minT = -1;
     int minShapeIndex = -1;
-    for (int i = 0; i < shapes.size(); i++) {
-        const Shape* shape = shapes[i];
-        GLdouble t = shape->rayIntersection(ray);
+    for (int i = 0; i < _shapes.size(); i++) {
+        const Shape* shape = _shapes[i];
+        GLdouble t = shape->RayIntersection(ray);
         if (t <= 0) {
             continue;
         }
@@ -40,6 +40,6 @@ const Shape* Scene::IntersectingShape(const Ray& ray) {
         }
     }
     
-    const Shape* shape = minShapeIndex != -1 ? shapes[minShapeIndex] : nullptr;
+    const Shape* shape = minShapeIndex != -1 ? _shapes[minShapeIndex] : nullptr;
     return shape;
 }

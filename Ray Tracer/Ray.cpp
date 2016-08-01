@@ -10,20 +10,20 @@
 #include "Vector.hpp"
 
 Ray::Ray(Vector position, Vector direction) {
-    this->position = position;
-    this->direction = direction.normalizedVector();
+    _position = position;
+    _direction = direction.NormalizedVector();
 }
 
 Vector Ray::Position() const {
-    return position;
+    return _position;
 }
 
 Vector Ray::Direction() const {
-    return direction;
+    return _direction;
 }
 
 Vector Ray::FindPoint(GLdouble t) const {
-    return position + (direction * t);
+    return _position + (_direction * t);
 }
 
 // Unfinished work for Ray intersection calculation

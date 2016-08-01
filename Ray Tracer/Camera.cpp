@@ -13,7 +13,7 @@
 #include "Ray.hpp"
 
 #define _USE_MATH_DEFINES
-#define MAX_BOUNCES 2
+#define MAX_BOUNCES 4
 
 Camera::Camera(Scene scene) {
     _position = Vector(0, 0, 0);
@@ -59,9 +59,9 @@ Color Camera::RayTrace(const Ray& ray, int bounces) {
         return Color(0, 0, 0, 0);
     }
     
-    GLdouble rayIntersectionT = shape->rayIntersection(ray);
+    GLdouble rayIntersectionT = shape->RayIntersection(ray);
     Vector intersectionPoint = ray.FindPoint(rayIntersectionT);
-    Vector intersectionNormal = shape->findNormalAtPoint(intersectionPoint);
+    Vector intersectionNormal = shape->FindNormalAtPoint(intersectionPoint);
     Vector reflectedVector = (-ray.Direction()).ReflectedAcross(intersectionNormal);
     
     Ray reflected = Ray(intersectionPoint, reflectedVector);

@@ -22,16 +22,13 @@ public:
     Vector(GLdouble x, GLdouble y, GLdouble z);
     Vector(const Vector &v);
     
-    GLdouble x() const;
-    GLdouble y() const;
-    GLdouble z() const;
-    
-    GLdouble length() const;
-    void normalize();
-    
-    void setX(GLdouble x);
-    void setY(GLdouble y);
-    void setZ(GLdouble z);
+    void SetX(GLdouble x);
+    void SetY(GLdouble y);
+    void SetZ(GLdouble z);
+    GLdouble X() const;
+    GLdouble Y() const;
+    GLdouble Z() const;
+    GLdouble Length() const;
     
     bool operator==(const Vector& rhs) const;
     bool operator!=(const Vector& rhs) const;
@@ -48,17 +45,18 @@ public:
     Vector& operator/=(const GLdouble& v);
     friend std::ostream& operator<<(std::ostream& out, const Vector& v);
     
-    Vector normalizedVector() const;
-    Vector projectionOnto(const Vector& v1) const;
-    Vector cross(const Vector& v1) const;
-    GLdouble dot(const Vector& v1) const;
+    void Normalize();
+    Vector NormalizedVector() const;
+    Vector ProjectionOnto(const Vector& v1) const;
+    Vector Cross(const Vector& v1) const;
+    GLdouble Dot(const Vector& v1) const;
     Vector ReflectedAcross(const Vector& axis) const;
     
 private:
-    GLdouble components[3];
-    GLdouble magnitude;
+    GLdouble _components[3];
+    GLdouble _magnitude;
     
-    void recalculateLength();
+    void RecalculateLength();
 };
 
 Vector CalculateReflectedVector(const Vector& original, const Vector& axis);

@@ -22,6 +22,10 @@
 		9021E5221D4E9D730082DB48 /* Material.hpp in Sources */ = {isa = PBXBuildFile; fileRef = 903D2A411D1F3D8C00BE4A04 /* Material.hpp */; };
 		9021E5231D4E9D7B0082DB48 /* Color.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 903D2A371D1F3D8C00BE4A04 /* Color.cpp */; };
 		9021E5241D4E9D7B0082DB48 /* Color.hpp in Sources */ = {isa = PBXBuildFile; fileRef = 903D2A381D1F3D8C00BE4A04 /* Color.hpp */; };
+		9021E5271D4ED7700082DB48 /* Plane.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9021E5251D4ED7700082DB48 /* Plane.cpp */; };
+		9021E5291D4EDE8A0082DB48 /* PlaneTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9021E5281D4EDE8A0082DB48 /* PlaneTest.cpp */; };
+		9021E52A1D4F14F10082DB48 /* Plane.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9021E5251D4ED7700082DB48 /* Plane.cpp */; };
+		9021E52B1D4F14F10082DB48 /* Plane.hpp in Sources */ = {isa = PBXBuildFile; fileRef = 9021E5261D4ED7700082DB48 /* Plane.hpp */; };
 		903D2A0C1D1F3D3A00BE4A04 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 903D2A0B1D1F3D3A00BE4A04 /* main.cpp */; };
 		903D2A4E1D1F3D8C00BE4A04 /* Color.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 903D2A371D1F3D8C00BE4A04 /* Color.cpp */; };
 		903D2A4F1D1F3D8C00BE4A04 /* InputHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 903D2A3A1D1F3D8C00BE4A04 /* InputHandler.cpp */; };
@@ -76,6 +80,9 @@
 		9021E5141D4D4AB70082DB48 /* libgtest.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libgtest.a; path = ../../../../usr/local/lib/libgtest.a; sourceTree = "<group>"; };
 		9021E5181D4DC4C90082DB48 /* SphereTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SphereTest.cpp; sourceTree = "<group>"; };
 		9021E51A1D4E9AF10082DB48 /* LightTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LightTest.cpp; sourceTree = "<group>"; };
+		9021E5251D4ED7700082DB48 /* Plane.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Plane.cpp; sourceTree = "<group>"; };
+		9021E5261D4ED7700082DB48 /* Plane.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Plane.hpp; sourceTree = "<group>"; };
+		9021E5281D4EDE8A0082DB48 /* PlaneTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PlaneTest.cpp; sourceTree = "<group>"; };
 		903D2A081D1F3D3A00BE4A04 /* Ray Tracer */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Ray Tracer"; sourceTree = BUILT_PRODUCTS_DIR; };
 		903D2A0B1D1F3D3A00BE4A04 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		903D2A371D1F3D8C00BE4A04 /* Color.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Color.cpp; sourceTree = "<group>"; };
@@ -150,6 +157,7 @@
 			children = (
 				9021E50D1D4D41940082DB48 /* VectorTest.cpp */,
 				9021E5181D4DC4C90082DB48 /* SphereTest.cpp */,
+				9021E5281D4EDE8A0082DB48 /* PlaneTest.cpp */,
 			);
 			name = Geometry;
 			sourceTree = "<group>";
@@ -224,6 +232,8 @@
 				903D2A4B1D1F3D8C00BE4A04 /* Sphere.hpp */,
 				903D2A4C1D1F3D8C00BE4A04 /* Vector.cpp */,
 				903D2A4D1D1F3D8C00BE4A04 /* Vector.hpp */,
+				9021E5251D4ED7700082DB48 /* Plane.cpp */,
+				9021E5261D4ED7700082DB48 /* Plane.hpp */,
 			);
 			name = Geometry;
 			sourceTree = "<group>";
@@ -317,6 +327,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9021E52A1D4F14F10082DB48 /* Plane.cpp in Sources */,
+				9021E52B1D4F14F10082DB48 /* Plane.hpp in Sources */,
 				9021E5231D4E9D7B0082DB48 /* Color.cpp in Sources */,
 				9021E5241D4E9D7B0082DB48 /* Color.hpp in Sources */,
 				9021E5211D4E9D730082DB48 /* Material.cpp in Sources */,
@@ -326,6 +338,7 @@
 				9021E5201D4E9D640082DB48 /* Ray.cpp in Sources */,
 				9021E51C1D4E9D490082DB48 /* Sphere.hpp in Sources */,
 				9021E51D1D4E9D490082DB48 /* Ray.hpp in Sources */,
+				9021E5291D4EDE8A0082DB48 /* PlaneTest.cpp in Sources */,
 				9021E5121D4D457C0082DB48 /* Vector.hpp in Sources */,
 				9021E50F1D4D41940082DB48 /* VectorTest.cpp in Sources */,
 				9021E51B1D4E9AF10082DB48 /* LightTest.cpp in Sources */,
@@ -340,6 +353,7 @@
 			files = (
 				903D2A621D1F3E7900BE4A04 /* Camera.cpp in Sources */,
 				903D2A511D1F3D8C00BE4A04 /* Light.cpp in Sources */,
+				9021E5271D4ED7700082DB48 /* Plane.cpp in Sources */,
 				903D2A581D1F3D8C00BE4A04 /* Vector.cpp in Sources */,
 				903D2A0C1D1F3D3A00BE4A04 /* main.cpp in Sources */,
 				903D2A521D1F3D8C00BE4A04 /* Material.cpp in Sources */,

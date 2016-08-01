@@ -21,12 +21,12 @@ public:
     Sphere(Vector center, GLdouble radius);
     Sphere(Vector center, GLdouble radius, Material mat);
     
-    GLdouble rayIntersection(const Ray& r) const override;
-    Vector findNormalAtPoint(const Vector& v) const override;
+    GLdouble RayIntersection(const Ray& r) const override;
+    Vector FindNormalAtPoint(const Vector& v) const override;
     
 private:
-    Vector center;
-    GLdouble radius;
+    Vector _center;
+    GLdouble _radius;
 };
 
 #endif /* Sphere_hpp */

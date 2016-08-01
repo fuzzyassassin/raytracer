@@ -21,17 +21,17 @@ public:
     /*
      * Returns -1.0 if there's no positive t intersection
      */
-    virtual GLdouble rayIntersection(const Ray& r) const = 0;
+    virtual GLdouble RayIntersection(const Ray& r) const = 0;
     
-    virtual Vector findNormalAtPoint(const Vector& v) const = 0;
+    virtual Vector FindNormalAtPoint(const Vector& v) const = 0;
     
     virtual Material Mat() const {
-        return material;
+        return _material;
     }
     
 protected:
-    GLdouble epsilon = 0.004f;
-    Material material;
+    GLdouble _epsilon = 0.004f;
+    Material _material;
 };
 
 #endif /* Shape_hpp */

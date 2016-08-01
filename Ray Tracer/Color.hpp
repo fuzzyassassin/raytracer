@@ -22,10 +22,10 @@ public:
     Color();
     Color(GLint r, GLint g, GLint b, GLint a);
     
-    GLint r();
-    GLint g();
-    GLint b();
-    GLint a();
+    GLint R();
+    GLint G();
+    GLint B();
+    GLint A();
     
     void Clamp();
     
@@ -39,7 +39,7 @@ public:
     Color& operator*=(GLdouble k);
     
 private:
-    GLint components[4];
+    GLint _components[4];
 };
 
 #endif /* Color_hpp */
