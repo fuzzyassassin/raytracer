@@ -10,9 +10,9 @@
 #include "Color.hpp"
 
 Color::Color() {
-    components[0] = 0xAA;
+    components[0] = 0x10;
     components[1] = 0x00;
-    components[2] = 0x11;
+    components[2] = 0x00;
     components[3] = 0xFF;
 }
 
@@ -57,12 +57,12 @@ Color Color::operator-(const Color& rhs) const {
                     0xFF);
 }
 Color Color::operator*(const Color& rhs) const {
-    return Color((this->components[0] * rhs.components[0]) >> 8,
-                  (this->components[1] * rhs.components[1]) >> 8,
-                  (this->components[2] * rhs.components[2]) >> 8,
+    return Color((this->components[0] * rhs.components[0]) / 255,
+                  (this->components[1] * rhs.components[1]) / 255,
+                  (this->components[2] * rhs.components[2]) / 255,
                     0xFF);
 }
-Color Color::operator*(GLfloat k) const {
+Color Color::operator*(GLdouble k) const {
     return Color(this->components[0] * k,
                  this->components[1] * k,
                  this->components[2] * k,
@@ -81,7 +81,7 @@ Color& Color::operator*=(const Color& rhs) {
     *this = *this * rhs;
     return *this;
 }
-Color& Color::operator*=(GLfloat k) {
+Color& Color::operator*=(GLdouble k) {
     *this = *this * k;
     return *this;
 }

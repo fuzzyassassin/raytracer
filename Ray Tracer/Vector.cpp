@@ -15,7 +15,7 @@ Vector::Vector() {
     magnitude = 0.0;
 }
 
-Vector::Vector(GLfloat x, GLfloat y, GLfloat z) {
+Vector::Vector(GLdouble x, GLdouble y, GLdouble z) {
     components[0] = x;
     components[1] = y;
     components[2] = z;
@@ -28,17 +28,17 @@ Vector::Vector(const Vector &v) {
     magnitude = v.magnitude;
 }
 
-GLfloat Vector::x() const {
+GLdouble Vector::x() const {
     return components[0];
 }
-GLfloat Vector::y() const {
+GLdouble Vector::y() const {
     return components[1];
 }
-GLfloat Vector::z() const {
+GLdouble Vector::z() const {
     return components[2];
 }
 
-GLfloat Vector::length() const {
+GLdouble Vector::length() const {
     return magnitude;
 }
 void Vector::normalize() {
@@ -48,14 +48,17 @@ void Vector::normalize() {
     magnitude = 1;
 }
 
-void Vector::setX(GLfloat x) {
+void Vector::setX(GLdouble x) {
     components[0] = x;
+    recalculateLength();
 }
-void Vector::setY(GLfloat y) {
+void Vector::setY(GLdouble y) {
     components[1] = y;
+    recalculateLength();
 }
-void Vector::setZ(GLfloat z) {
+void Vector::setZ(GLdouble z) {
     components[2] = z;
+    recalculateLength();
 }
 
 bool Vector::operator==(const Vector& rhs) const {
@@ -83,13 +86,13 @@ Vector Vector::operator-(const Vector& rhs) const {
                   this->components[1] - rhs.components[1],
                   this->components[2] - rhs.components[2]);
 }
-//Make these next two operations symmetrical
-Vector Vector::operator*(GLfloat k) const {
+//Make this operation symmetrical
+Vector Vector::operator*(GLdouble k) const {
     return Vector(this->components[0] * k,
                   this->components[1] * k,
                   this->components[2] * k);
 }
-Vector Vector::operator/(GLfloat k) const {
+Vector Vector::operator/(GLdouble k) const {
     return Vector(this->components[0] / k,
                   this->components[1] / k,
                   this->components[2] / k);
@@ -103,11 +106,11 @@ Vector& Vector::operator-=(const Vector& v) {
     *this = *this - v;
     return *this;
 }
-Vector& Vector::operator*=(const GLfloat& k) {
+Vector& Vector::operator*=(const GLdouble& k) {
     *this = *this * k;
     return *this;
 }
-Vector& Vector::operator/=(const GLfloat& k) {
+Vector& Vector::operator/=(const GLdouble& k) {
     *this = *this / k;
     return *this;
 }
@@ -116,24 +119,38 @@ Vector Vector::normalizedVector() const {
     return *this / magnitude;
 }
 Vector Vector::projectionOnto(const Vector& v1) const {
-    GLfloat lengthV1 = v1.magnitude;
+    GLdouble lengthV1 = v1.magnitude;
     return (v1 * this->dot(v1)) / (lengthV1 * lengthV1);
 }
 Vector Vector::cross(const Vector& v1) const {
-    GLfloat x = components[1] * v1.components[2] - components[2] * v1.components[1];
-    GLfloat y = components[2] * v1.components[0] - components[0] * v1.components[2];
-    GLfloat z = components[0] * v1.components[1] - components[1] * v1.components[0];
+    GLdouble x = components[1] * v1.components[2] - components[2] * v1.components[1];
+    GLdouble y = components[2] * v1.components[0] - components[0] * v1.components[2];
+    GLdouble z = components[0] * v1.components[1] - components[1] * v1.components[0];
     return Vector(x, y, z);
 }
-GLfloat Vector::dot(const Vector& v1) const {
-    GLfloat x = components[0] * v1.components[0];
-    GLfloat y = components[1] * v1.components[1];
-    GLfloat z = components[2] * v1.components[2];
+GLdouble Vector::dot(const Vector& v1) const {
+    GLdouble x = components[0] * v1.components[0];
+    GLdouble y = components[1] * v1.components[1];
+    GLdouble z = components[2] * v1.components[2];
     return x + y + z;
 }
 Vector Vector::ReflectedAcross(const Vector& axis) const {
     Vector ogUnit = this->normalizedVector();
     Vector axUnit = axis.normalizedVector();
-    GLfloat coef = 2 * ogUnit.dot(axUnit);
-    return (axUnit - (ogUnit * coef)) * magnitude;
+    GLdouble coef = 2 * ogUnit.dot(axUnit);
+    return ((axUnit * coef) - ogUnit) * magnitude;
+}
+
+void Vector::recalculateLength() {
+    GLdouble x = components[0];
+    GLdouble y = components[1];
+    GLdouble z = components[2];
+    magnitude = sqrt(x * x + y * y + z * z);
+}
+
+std::ostream& operator<<(std::ostream& out, const Vector& v) {
+    return out << "X:" << v.components[0] << std::endl
+            << "Y:" << v.components[1] << std::endl
+            << "Z:" << v.components[2] << std::endl
+            << "Length:" << v.magnitude << std::endl;
 }

@@ -16,7 +16,7 @@ class Ray {
 public:
     Ray(Vector position, Vector direction);
     
-    Vector FindPoint(GLfloat t) const;
+    Vector FindPoint(GLdouble t) const;
     Vector Position() const;
     Vector Direction() const;
     

@@ -26,12 +26,12 @@ void Scene::AddLight(const Light light) {
 }
 
 const Shape* Scene::IntersectingShape(const Ray& ray) {
-    GLfloat minT = -1;
+    GLdouble minT = -1;
     int minShapeIndex = -1;
     for (int i = 0; i < shapes.size(); i++) {
         const Shape* shape = shapes[i];
-        GLfloat t = shape->rayIntersection(ray);
-        if (t < 0) {
+        GLdouble t = shape->rayIntersection(ray);
+        if (t <= 0) {
             continue;
         }
         if (minT == -1 || t < minT) {

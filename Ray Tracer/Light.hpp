@@ -28,7 +28,7 @@ public:
     Color CalculateAmbient(const Material& mat) const;
     Color CalculateDiffuse(const Material& mat, const Vector& normal, const Vector& toLight) const;
     Color CalculateSpecular(const Material& mat, const Vector& normal, const Vector& toLight, const Vector& incoming) const;
-    Color Illuminate(const Shape* shape, const Ray& ray, GLfloat rayIntersectionT);
+    Color Illuminate(const Shape* shape, const Vector& ray, const Vector& point) const;
     
 private:
     Vector _position;

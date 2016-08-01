@@ -29,10 +29,13 @@ Renderer init(int w, int h) {
     // old just creates objects and fills the shapes array
     Scene scene;
     
-    Sphere* circle = new Sphere(Vector(3, 4, -100), 5);
+    Material sphereMat = Material(Color(50, 192, 128, 255), Color(50, 192, 128, 255), Color(50, 192, 128, 255), 2.0f);
+    Sphere* circle = new Sphere(Vector(0, 0, -75), 5, sphereMat);
+    Sphere* second = new Sphere(Vector(15, 10, -60), 6);
     
     scene.AddShape(circle);
-    scene.AddLight(Light());
+    scene.AddShape(second);
+    scene.AddLight(Light(Vector(-10000, 3000, 1000), Color(255,0,0,1), Color(0,255,0,1), Color(0,0,255,1)));
     
     // initCamera
     // sets plane distance, camera position, and fov

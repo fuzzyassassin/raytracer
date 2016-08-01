@@ -16,18 +16,18 @@
 class Material {
 public:
     Material();
-    Material(Color ambient, Color diffuse, Color specular, GLfloat shiny);
+    Material(Color ambient, Color diffuse, Color specular, GLdouble shiny);
     
     Color Ambient() const;
     Color Diffuse() const;
     Color Specular() const;
-    GLfloat Shiny() const;
+    GLdouble Shiny() const;
     
 private:
     Color ambient;
     Color diffuse;
     Color specular;
-    GLfloat shiny;
+    GLdouble shiny;
 };
 
 #endif /* Material_hpp */

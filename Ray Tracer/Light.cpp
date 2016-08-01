@@ -14,7 +14,7 @@
 #include "Ray.hpp"
 
 Light::Light() {
-    _position = Vector(10, 50, 8);
+    _position = Vector(0, 0, 100);
     _ambient = Color(255, 0, 0, 1);
     _diffuse = Color(0, 255, 0, 1);
     _specular = Color(0, 0, 255, 1);
@@ -42,37 +42,38 @@ Color Light::Specular() const {
 
 Color Light::CalculateAmbient(const Material& mat) const {
     Color color = _ambient * mat.Ambient();
+    
+//    return Color(0, 0, 0, 1);
     return color;
 }
 
 Color Light::CalculateDiffuse(const Material& mat, const Vector& normal, const Vector& toLight) const {
     Vector normalNormd = normal.normalizedVector();
-    Vector toLightNormd = toLight.normalizedVector();
+    Vector toLightNormd = -toLight.normalizedVector();
     
-    Color diffuse = _diffuse * mat.Diffuse() * fmax(0, normalNormd.dot(toLightNormd));
+    Color diffuse = _diffuse * mat.Diffuse() *  normalNormd.dot(toLightNormd);
     
+//    return Color(0, 0, 0, 1);
     return diffuse;
 }
 
-Color Light::CalculateSpecular(const Material& mat, const Vector& normal, const Vector& toLight, const Vector& incoming) const {    
-    Vector halfway = (toLight - incoming).normalizedVector();
+Color Light::CalculateSpecular(const Material& mat, const Vector& normal, const Vector& toLight, const Vector& toViewer) const {
+    Vector halfway = -(toLight + toViewer).normalizedVector();
     
-    Color specular = _specular * mat.Specular() * pow(normal.normalizedVector().dot(halfway), mat.Shiny());
+    Color specular = _specular * mat.Specular() * pow(normal.normalizedVector().dot(halfway), 3.0f);
     
+//    return Color(0, 0, 0, 1);
     return specular;
 }
 
-Color Light::Illuminate(const Shape* shape, const Ray& ray, GLfloat rayIntersectionT) {
-    Vector intersection = ray.FindPoint(rayIntersectionT);
+Color Light::Illuminate(const Shape* shape, const Vector& toViewer, const Vector& intersection) const {
     Vector toLightDistance = _position - intersection;
     Vector toLight = toLightDistance.normalizedVector();
     
     Vector normal = shape->findNormalAtPoint(intersection);
-//
-//    Color color = _ambient * shape->Mat().Ambient();
 
     Color color = CalculateDiffuse(shape->Mat(), normal, toLight) +
-                  CalculateSpecular(shape->Mat(), normal, toLight, ray.Direction());
+                  CalculateSpecular(shape->Mat(), normal, toLight, toViewer);
     
     return color;
 }

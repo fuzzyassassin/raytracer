@@ -9,13 +9,13 @@
 #include "Material.hpp"
 
 Material::Material() {
-    ambient = Color();
-    diffuse = Color();
-    specular = Color();
-    shiny = 0.0f;
+    ambient = Color(64, 178, 64, 255);
+    diffuse = Color(64, 178, 64, 255);
+    specular = Color(64, 178, 64, 255);
+    shiny = 3.0f;
 }
 
-Material::Material(Color ambient, Color diffuse, Color specular, GLfloat shiny) {
+Material::Material(Color ambient, Color diffuse, Color specular, GLdouble shiny) {
     this->ambient = ambient;
     this->diffuse = diffuse;
     this->specular = specular;
@@ -31,6 +31,6 @@ Color Material::Diffuse() const {
 Color Material::Specular() const {
     return specular;
 }
-GLfloat Material::Shiny() const {
+GLdouble Material::Shiny() const {
     return shiny;
 }

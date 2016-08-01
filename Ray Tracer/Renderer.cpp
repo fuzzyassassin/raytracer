@@ -35,6 +35,7 @@ void Renderer::Draw() {
     for (int y = 0; y < height; y++) {
         for (int x = 0; x < width; x++) {
             Color pixel = cam.ShootRay(x, y, width, height);
+            pixel.Clamp();
             WriteColor(pixel, x, y);
         }
     }

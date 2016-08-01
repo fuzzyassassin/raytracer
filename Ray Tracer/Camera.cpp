@@ -13,7 +13,7 @@
 #include "Ray.hpp"
 
 #define _USE_MATH_DEFINES
-#define MAX_BOUNCES 0
+#define MAX_BOUNCES 2
 
 Camera::Camera(Scene scene) {
     _position = Vector(0, 0, 0);
@@ -23,7 +23,7 @@ Camera::Camera(Scene scene) {
     _scene = scene;
 }
 
-Camera::Camera(Scene scene, GLfloat imagePlaneDist, GLfloat fov) {
+Camera::Camera(Scene scene, GLdouble imagePlaneDist, GLdouble fov) {
     _planeDist = imagePlaneDist;
     _fov = fov;
     _imageWidth = 2 * _planeDist * std::tan(_fov/2);
@@ -59,7 +59,7 @@ Color Camera::RayTrace(const Ray& ray, int bounces) {
         return Color(0, 0, 0, 0);
     }
     
-    GLfloat rayIntersectionT = shape->rayIntersection(ray);
+    GLdouble rayIntersectionT = shape->rayIntersection(ray);
     Vector intersectionPoint = ray.FindPoint(rayIntersectionT);
     Vector intersectionNormal = shape->findNormalAtPoint(intersectionPoint);
     Vector reflectedVector = (-ray.Direction()).ReflectedAcross(intersectionNormal);
@@ -86,7 +86,7 @@ Color Camera::RayTrace(const Ray& ray, int bounces) {
             continue;
         }
         
-        phongColor += curLight.Illuminate(shape, ray, rayIntersectionT);
+        phongColor += curLight.Illuminate(shape, -ray.Direction(), intersection);
         
     }
     

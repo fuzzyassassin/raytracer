@@ -10,8 +10,18 @@
 		9021E5041D4D3EDB0082DB48 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9021E5031D4D3EDB0082DB48 /* main.cpp */; };
 		9021E50F1D4D41940082DB48 /* VectorTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9021E50D1D4D41940082DB48 /* VectorTest.cpp */; };
 		9021E5121D4D457C0082DB48 /* Vector.hpp in Sources */ = {isa = PBXBuildFile; fileRef = 903D2A4D1D1F3D8C00BE4A04 /* Vector.hpp */; };
-		9021E5131D4D458E0082DB48 /* Vector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 903D2A4C1D1F3D8C00BE4A04 /* Vector.cpp */; };
 		9021E5151D4D4AB70082DB48 /* libgtest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9021E5141D4D4AB70082DB48 /* libgtest.a */; };
+		9021E5191D4DC4C90082DB48 /* SphereTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9021E5181D4DC4C90082DB48 /* SphereTest.cpp */; };
+		9021E51B1D4E9AF10082DB48 /* LightTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9021E51A1D4E9AF10082DB48 /* LightTest.cpp */; };
+		9021E51C1D4E9D490082DB48 /* Sphere.hpp in Sources */ = {isa = PBXBuildFile; fileRef = 903D2A4B1D1F3D8C00BE4A04 /* Sphere.hpp */; };
+		9021E51D1D4E9D490082DB48 /* Ray.hpp in Sources */ = {isa = PBXBuildFile; fileRef = 903D2A431D1F3D8C00BE4A04 /* Ray.hpp */; };
+		9021E51E1D4E9D640082DB48 /* Sphere.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 903D2A4A1D1F3D8C00BE4A04 /* Sphere.cpp */; };
+		9021E51F1D4E9D640082DB48 /* Vector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 903D2A4C1D1F3D8C00BE4A04 /* Vector.cpp */; };
+		9021E5201D4E9D640082DB48 /* Ray.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 903D2A421D1F3D8C00BE4A04 /* Ray.cpp */; };
+		9021E5211D4E9D730082DB48 /* Material.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 903D2A401D1F3D8C00BE4A04 /* Material.cpp */; };
+		9021E5221D4E9D730082DB48 /* Material.hpp in Sources */ = {isa = PBXBuildFile; fileRef = 903D2A411D1F3D8C00BE4A04 /* Material.hpp */; };
+		9021E5231D4E9D7B0082DB48 /* Color.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 903D2A371D1F3D8C00BE4A04 /* Color.cpp */; };
+		9021E5241D4E9D7B0082DB48 /* Color.hpp in Sources */ = {isa = PBXBuildFile; fileRef = 903D2A381D1F3D8C00BE4A04 /* Color.hpp */; };
 		903D2A0C1D1F3D3A00BE4A04 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 903D2A0B1D1F3D3A00BE4A04 /* main.cpp */; };
 		903D2A4E1D1F3D8C00BE4A04 /* Color.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 903D2A371D1F3D8C00BE4A04 /* Color.cpp */; };
 		903D2A4F1D1F3D8C00BE4A04 /* InputHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 903D2A3A1D1F3D8C00BE4A04 /* InputHandler.cpp */; };
@@ -27,6 +37,16 @@
 		903D2A631D1F520D00BE4A04 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 903D2A5B1D1F3DB000BE4A04 /* OpenGL.framework */; };
 		903D2A6A1D31BC8D00BE4A04 /* libglfw.3.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 903D2A691D31BC8D00BE4A04 /* libglfw.3.2.dylib */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9021E5161D4D629D0082DB48 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 903D2A001D1F3D3A00BE4A04 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 903D2A071D1F3D3A00BE4A04;
+			remoteInfo = "Ray Tracer";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		9021E4FF1D4D3EDB0082DB48 /* CopyFiles */ = {
@@ -54,6 +74,8 @@
 		9021E5031D4D3EDB0082DB48 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		9021E50D1D4D41940082DB48 /* VectorTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = VectorTest.cpp; sourceTree = "<group>"; };
 		9021E5141D4D4AB70082DB48 /* libgtest.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libgtest.a; path = ../../../../usr/local/lib/libgtest.a; sourceTree = "<group>"; };
+		9021E5181D4DC4C90082DB48 /* SphereTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SphereTest.cpp; sourceTree = "<group>"; };
+		9021E51A1D4E9AF10082DB48 /* LightTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LightTest.cpp; sourceTree = "<group>"; };
 		903D2A081D1F3D3A00BE4A04 /* Ray Tracer */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Ray Tracer"; sourceTree = BUILT_PRODUCTS_DIR; };
 		903D2A0B1D1F3D3A00BE4A04 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		903D2A371D1F3D8C00BE4A04 /* Color.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Color.cpp; sourceTree = "<group>"; };
@@ -127,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				9021E50D1D4D41940082DB48 /* VectorTest.cpp */,
+				9021E5181D4DC4C90082DB48 /* SphereTest.cpp */,
 			);
 			name = Geometry;
 			sourceTree = "<group>";
@@ -134,6 +157,7 @@
 		9021E50C1D4D416A0082DB48 /* Lighting */ = {
 			isa = PBXGroup;
 			children = (
+				9021E51A1D4E9AF10082DB48 /* LightTest.cpp */,
 			);
 			name = Lighting;
 			sourceTree = "<group>";
@@ -229,6 +253,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				9021E5171D4D629D0082DB48 /* PBXTargetDependency */,
 			);
 			name = "Ray Tracer Test";
 			productName = "Ray Tracer Test";
@@ -292,9 +317,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9021E5131D4D458E0082DB48 /* Vector.cpp in Sources */,
+				9021E5231D4E9D7B0082DB48 /* Color.cpp in Sources */,
+				9021E5241D4E9D7B0082DB48 /* Color.hpp in Sources */,
+				9021E5211D4E9D730082DB48 /* Material.cpp in Sources */,
+				9021E5221D4E9D730082DB48 /* Material.hpp in Sources */,
+				9021E51E1D4E9D640082DB48 /* Sphere.cpp in Sources */,
+				9021E51F1D4E9D640082DB48 /* Vector.cpp in Sources */,
+				9021E5201D4E9D640082DB48 /* Ray.cpp in Sources */,
+				9021E51C1D4E9D490082DB48 /* Sphere.hpp in Sources */,
+				9021E51D1D4E9D490082DB48 /* Ray.hpp in Sources */,
 				9021E5121D4D457C0082DB48 /* Vector.hpp in Sources */,
 				9021E50F1D4D41940082DB48 /* VectorTest.cpp in Sources */,
+				9021E51B1D4E9AF10082DB48 /* LightTest.cpp in Sources */,
+				9021E5191D4DC4C90082DB48 /* SphereTest.cpp in Sources */,
 				9021E5041D4D3EDB0082DB48 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -319,6 +354,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9021E5171D4D629D0082DB48 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 903D2A071D1F3D3A00BE4A04 /* Ray Tracer */;
+			targetProxy = 9021E5161D4D629D0082DB48 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		9021E5061D4D3EDB0082DB48 /* Debug */ = {

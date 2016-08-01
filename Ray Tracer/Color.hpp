@@ -32,11 +32,11 @@ public:
     Color operator+(const Color& rhs) const;
     Color operator-(const Color& rhs) const;
     Color operator*(const Color& rhs) const; // Constant multiplication k*v
-    Color operator*(GLfloat k) const;
+    Color operator*(GLdouble k) const;
     Color& operator+=(const Color& rhs);
     Color& operator-=(const Color& rhs);
     Color& operator*=(const Color& rhs);
-    Color& operator*=(GLfloat k);
+    Color& operator*=(GLdouble k);
     
 private:
     GLint components[4];

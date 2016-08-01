@@ -18,7 +18,7 @@
 class Camera {
 public:
     Camera(Scene scene);
-    Camera(Scene scene, GLfloat imagePlaneDist, GLfloat fov);
+    Camera(Scene scene, GLdouble imagePlaneDist, GLdouble fov);
     Camera(const Camera &c);
     
     Color ShootRay(int x, int y, int width, int height);
@@ -26,9 +26,9 @@ public:
     
 private:
     Vector _position;
-    GLfloat _planeDist;
-    GLfloat _fov;
-    GLfloat _imageWidth;
+    GLdouble _planeDist;
+    GLdouble _fov;
+    GLdouble _imageWidth;
     Scene _scene;
 };
 
