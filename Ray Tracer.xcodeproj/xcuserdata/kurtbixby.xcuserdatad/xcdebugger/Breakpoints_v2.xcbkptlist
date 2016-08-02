@@ -10,12 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Ray Tracer/Light.cpp"
-            timestampString = "491703088.911879"
+            timestampString = "491800694.465622"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
-            landmarkName = "Light::Illuminate(const Shape* shape, const Vector&amp; toViewer, const Vector&amp; intersection)"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
+            landmarkName = "Light::Illuminate(const Shape* shape, const Ray&amp; incoming, const Vector&amp; intersection)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Ray Tracer/Camera.cpp"
-            timestampString = "491192174.593891"
+            timestampString = "491726851.133456"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
             landmarkName = "Camera::RayTrace(const Ray&amp; ray, int bounces)"
             landmarkType = "5">
          </BreakpointContent>
@@ -90,11 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Ray Tracer/Camera.cpp"
-            timestampString = "491192358.738377"
+            timestampString = "491726851.133456"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
             landmarkName = "Camera::RayTrace(const Ray&amp; ray, int bounces)"
             landmarkType = "5">
          </BreakpointContent>
@@ -192,6 +192,38 @@
             startingLineNumber = "60"
             endingLineNumber = "60"
             landmarkName = "Camera::RayTrace(const Ray&amp; ray, int bounces)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Ray Tracer/Scene.cpp"
+            timestampString = "491722965.235017"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "Scene::IntersectingShape(const Ray&amp; ray)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Ray Tracer/Plane.cpp"
+            timestampString = "491801435.53468"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "Plane::FindNormalForIntersectingRay(const Ray&amp; r)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

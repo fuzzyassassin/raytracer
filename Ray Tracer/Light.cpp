@@ -66,11 +66,12 @@ Color Light::CalculateSpecular(const Material& mat, const Vector& normal, const 
     return specular;
 }
 
-Color Light::Illuminate(const Shape* shape, const Vector& toViewer, const Vector& intersection) const {
+Color Light::Illuminate(const Shape* shape, const Ray& incoming, const Vector& intersection) const {
     Vector toLightDistance = _position - intersection;
     Vector toLight = toLightDistance.NormalizedVector();
+    Vector toViewer = (-incoming.Direction()).NormalizedVector();
     
-    Vector normal = shape->FindNormalAtPoint(intersection);
+    Vector normal = shape->FindNormalForIntersectingRay(incoming);
 
     Color color = CalculateDiffuse(shape->Mat(), normal, toLight) +
                   CalculateSpecular(shape->Mat(), normal, toLight, toViewer);

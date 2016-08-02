@@ -55,3 +55,8 @@ Vector Sphere::FindNormalAtPoint(const Vector& v) const {
     Vector diff = v - _center;
     return diff.NormalizedVector();
 }
+
+Vector Sphere::FindNormalForIntersectingRay(const Ray& r) const {
+    GLdouble t = RayIntersection(r);
+    return FindNormalAtPoint(r.FindPoint(t));
+}

@@ -23,6 +23,7 @@ public:
     
     GLdouble RayIntersection(const Ray& r) const override;
     Vector FindNormalAtPoint(const Vector& v) const override;
+    Vector FindNormalForIntersectingRay(const Ray& r) const override;
     
 private:
     Vector _center;

@@ -13,7 +13,7 @@
 #include "Ray.hpp"
 
 #define _USE_MATH_DEFINES
-#define MAX_BOUNCES 4
+#define MAX_BOUNCES 3
 
 Camera::Camera(Scene scene) {
     _position = Vector(0, 0, 0);
@@ -61,7 +61,7 @@ Color Camera::RayTrace(const Ray& ray, int bounces) {
     
     GLdouble rayIntersectionT = shape->RayIntersection(ray);
     Vector intersectionPoint = ray.FindPoint(rayIntersectionT);
-    Vector intersectionNormal = shape->FindNormalAtPoint(intersectionPoint);
+    Vector intersectionNormal = shape->FindNormalForIntersectingRay(ray);
     Vector reflectedVector = (-ray.Direction()).ReflectedAcross(intersectionNormal);
     
     Ray reflected = Ray(intersectionPoint, reflectedVector);
@@ -82,11 +82,21 @@ Color Camera::RayTrace(const Ray& ray, int bounces) {
         Ray toLight = Ray(intersection, curLight.Position() - intersection);
         
         // Go to the next light if there's an object between the intersection and the light
-        if (_scene.IntersectingShape(toLight) != nullptr) {
+        const Shape* const blocking = _scene.IntersectingShape(toLight);
+        if (blocking != nullptr) {
             continue;
+            if (blocking != shape) {
+                continue;
+            }
+            
+            GLdouble blockingIntersectionT = blocking->RayIntersection(ray);
+            GLdouble _epsilon = 0.0004;
+            if (std::abs(blockingIntersectionT - rayIntersectionT) > _epsilon) {
+                continue;
+            }
         }
         
-        phongColor += curLight.Illuminate(shape, -ray.Direction(), intersection);
+        phongColor += curLight.Illuminate(shape, ray, intersection);
         
     }
     

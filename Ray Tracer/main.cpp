@@ -33,7 +33,7 @@ Renderer init(int w, int h) {
     Material sphereMat = Material(Color(50, 192, 128, 255), Color(50, 192, 128, 255), Color(50, 192, 128, 255), 2.0f);
     Sphere* circle = new Sphere(Vector(0, 0, -75), 5, sphereMat);
     Sphere* second = new Sphere(Vector(15, 10, -60), 6);
-    Plane* plane = new Plane(Vector(0, -5, 0), Vector(0, 1, 0));
+    Plane* plane = new Plane(Vector(0, -5, 0), Vector(0, -1, 0));
     
     scene.AddShape(circle);
     scene.AddShape(second);

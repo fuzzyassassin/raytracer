@@ -46,6 +46,9 @@ GLdouble Plane::RayIntersection(const Ray& r) const {
     }
     else {
         result = numer/denom;
+        if (result < _epsilon) {
+            result = -1.0;
+        }
     }
     return result;
 }
@@ -57,4 +60,14 @@ Vector Plane::FindNormalAtPoint(const Vector& v) const {
 //    }
     
     return _normal;
+}
+
+Vector Plane::FindNormalForIntersectingRay(const Ray& r) const {
+//    return _normal;
+    if (_normal.Dot(r.Direction()) < _epsilon) {
+        return _normal;
+    }
+    else {
+        return -_normal;
+    }
 }

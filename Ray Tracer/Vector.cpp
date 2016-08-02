@@ -7,6 +7,7 @@
 //
 
 #include "Vector.hpp"
+#include <cmath>
 
 Vector::Vector() {
     _components[0] = 0.0;
@@ -66,7 +67,10 @@ const Vector Vector::operator+() const {
     return *this;
 }
 Vector Vector::operator-() const {
-    return Vector(-_components[0], -_components[1], -_components[2]);
+    GLdouble newX = std::abs(_components[0]) == 0.0 ? 0.0 : -_components[0];
+    GLdouble newY = std::abs(_components[1]) == 0.0 ? 0.0 : -_components[1];
+    GLdouble newZ = std::abs(_components[2]) == 0.0 ? 0.0 : -_components[2];
+    return Vector(newX, newY, newZ);
 }
 Vector Vector::operator+(const Vector& rhs) const {
     return Vector(this->_components[0] + rhs._components[0],

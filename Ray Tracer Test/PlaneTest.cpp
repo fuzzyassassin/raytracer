@@ -59,3 +59,19 @@ TEST(PlaneNormal, BelowPlane) {
     Vector point = r.FindPoint(t);
     EXPECT_EQ(p.FindNormalAtPoint(point), Vector(0, -1, 0));
 }
+
+TEST(PlaneNormalRay, AbovePlane) {
+    Plane p = Plane(Vector(), Vector(0, 1, 0));
+    Ray r = Ray(Vector(0, 1, 0), Vector(-1, -1, -1));
+    GLdouble t = p.RayIntersection(r);
+    Vector point = r.FindPoint(t);
+    EXPECT_EQ(p.FindNormalForIntersectingRay(r), Vector(0, 1, 0));
+}
+
+TEST(PlaneNormalRay, BelowPlane) {
+    Plane p = Plane(Vector(), Vector(0, 1, 0));
+    Ray r = Ray(Vector(0, -1, 0), Vector(1, 1, 1));
+    GLdouble t = p.RayIntersection(r);
+    Vector point = r.FindPoint(t);
+    EXPECT_EQ(p.FindNormalForIntersectingRay(r), Vector(0, -1, 0));
+}

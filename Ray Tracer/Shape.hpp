@@ -25,12 +25,14 @@ public:
     
     virtual Vector FindNormalAtPoint(const Vector& v) const = 0;
     
+    virtual Vector FindNormalForIntersectingRay(const Ray& r) const = 0;
+    
     virtual Material Mat() const {
         return _material;
     }
     
 protected:
-    GLdouble _epsilon = 0.004f;
+    GLdouble _epsilon = 0.0004;
     Material _material;
 };
 
