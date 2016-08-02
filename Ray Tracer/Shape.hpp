@@ -10,8 +10,8 @@
 #define Shape_hpp
 
 #include <stdio.h>
-#include "Vector.hpp"
 #include "Ray.hpp"
+#include "Vector.hpp"
 #include "Material.hpp"
 
 class Shape {    

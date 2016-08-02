@@ -26,6 +26,10 @@
 		9021E5291D4EDE8A0082DB48 /* PlaneTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9021E5281D4EDE8A0082DB48 /* PlaneTest.cpp */; };
 		9021E52A1D4F14F10082DB48 /* Plane.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9021E5251D4ED7700082DB48 /* Plane.cpp */; };
 		9021E52B1D4F14F10082DB48 /* Plane.hpp in Sources */ = {isa = PBXBuildFile; fileRef = 9021E5261D4ED7700082DB48 /* Plane.hpp */; };
+		9021E5301D5057480082DB48 /* Polygon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9021E52E1D5057480082DB48 /* Polygon.cpp */; };
+		9021E5321D505D630082DB48 /* PolygonTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9021E5311D505D630082DB48 /* PolygonTest.cpp */; };
+		9021E5331D505D960082DB48 /* Polygon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9021E52E1D5057480082DB48 /* Polygon.cpp */; };
+		9021E5341D505D960082DB48 /* Polygon.hpp in Sources */ = {isa = PBXBuildFile; fileRef = 9021E52F1D5057480082DB48 /* Polygon.hpp */; };
 		903D2A0C1D1F3D3A00BE4A04 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 903D2A0B1D1F3D3A00BE4A04 /* main.cpp */; };
 		903D2A4E1D1F3D8C00BE4A04 /* Color.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 903D2A371D1F3D8C00BE4A04 /* Color.cpp */; };
 		903D2A4F1D1F3D8C00BE4A04 /* InputHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 903D2A3A1D1F3D8C00BE4A04 /* InputHandler.cpp */; };
@@ -83,6 +87,9 @@
 		9021E5251D4ED7700082DB48 /* Plane.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Plane.cpp; sourceTree = "<group>"; };
 		9021E5261D4ED7700082DB48 /* Plane.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Plane.hpp; sourceTree = "<group>"; };
 		9021E5281D4EDE8A0082DB48 /* PlaneTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PlaneTest.cpp; sourceTree = "<group>"; };
+		9021E52E1D5057480082DB48 /* Polygon.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Polygon.cpp; sourceTree = "<group>"; };
+		9021E52F1D5057480082DB48 /* Polygon.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Polygon.hpp; sourceTree = "<group>"; };
+		9021E5311D505D630082DB48 /* PolygonTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PolygonTest.cpp; sourceTree = "<group>"; };
 		903D2A081D1F3D3A00BE4A04 /* Ray Tracer */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Ray Tracer"; sourceTree = BUILT_PRODUCTS_DIR; };
 		903D2A0B1D1F3D3A00BE4A04 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		903D2A371D1F3D8C00BE4A04 /* Color.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Color.cpp; sourceTree = "<group>"; };
@@ -158,6 +165,7 @@
 				9021E50D1D4D41940082DB48 /* VectorTest.cpp */,
 				9021E5181D4DC4C90082DB48 /* SphereTest.cpp */,
 				9021E5281D4EDE8A0082DB48 /* PlaneTest.cpp */,
+				9021E5311D505D630082DB48 /* PolygonTest.cpp */,
 			);
 			name = Geometry;
 			sourceTree = "<group>";
@@ -234,6 +242,8 @@
 				903D2A4D1D1F3D8C00BE4A04 /* Vector.hpp */,
 				9021E5251D4ED7700082DB48 /* Plane.cpp */,
 				9021E5261D4ED7700082DB48 /* Plane.hpp */,
+				9021E52E1D5057480082DB48 /* Polygon.cpp */,
+				9021E52F1D5057480082DB48 /* Polygon.hpp */,
 			);
 			name = Geometry;
 			sourceTree = "<group>";
@@ -327,6 +337,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9021E5331D505D960082DB48 /* Polygon.cpp in Sources */,
+				9021E5341D505D960082DB48 /* Polygon.hpp in Sources */,
 				9021E52A1D4F14F10082DB48 /* Plane.cpp in Sources */,
 				9021E52B1D4F14F10082DB48 /* Plane.hpp in Sources */,
 				9021E5231D4E9D7B0082DB48 /* Color.cpp in Sources */,
@@ -337,6 +349,7 @@
 				9021E51F1D4E9D640082DB48 /* Vector.cpp in Sources */,
 				9021E5201D4E9D640082DB48 /* Ray.cpp in Sources */,
 				9021E51C1D4E9D490082DB48 /* Sphere.hpp in Sources */,
+				9021E5321D505D630082DB48 /* PolygonTest.cpp in Sources */,
 				9021E51D1D4E9D490082DB48 /* Ray.hpp in Sources */,
 				9021E5291D4EDE8A0082DB48 /* PlaneTest.cpp in Sources */,
 				9021E5121D4D457C0082DB48 /* Vector.hpp in Sources */,
@@ -359,6 +372,7 @@
 				903D2A521D1F3D8C00BE4A04 /* Material.cpp in Sources */,
 				903D2A4F1D1F3D8C00BE4A04 /* InputHandler.cpp in Sources */,
 				903D2A541D1F3D8C00BE4A04 /* Renderer.cpp in Sources */,
+				9021E5301D5057480082DB48 /* Polygon.cpp in Sources */,
 				903D2A531D1F3D8C00BE4A04 /* Ray.cpp in Sources */,
 				903D2A571D1F3D8C00BE4A04 /* Sphere.cpp in Sources */,
 				903D2A4E1D1F3D8C00BE4A04 /* Color.cpp in Sources */,
